@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Web", "Todo.Web\Todo.Web.csproj", "{A19370D2-6890-48AE-86DD-E776BCDA9D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Web", "Todo.Web\Todo.Web.csproj", "{A19370D2-6890-48AE-86DD-E776BCDA9D6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.DAL", "Todo.DAL\Todo.DAL.csproj", "{1F7FE371-77DC-4EC4-B633-904ACA8F4F4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.DAL", "Todo.DAL\Todo.DAL.csproj", "{1F7FE371-77DC-4EC4-B633-904ACA8F4F4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Entities", "Todo.Entities\Todo.Entities.csproj", "{EDFCB168-C058-4DF7-BA8E-3081AC0DE7A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Entities", "Todo.Entities\Todo.Entities.csproj", "{EDFCB168-C058-4DF7-BA8E-3081AC0DE7A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Web.Contract", "Todo.Web.Contract\Todo.Web.Contract.csproj", "{663FE136-6B0A-40CE-B6CB-373A3F32EA26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Web.BLL", "Todo.Web.BLL\Todo.Web.BLL.csproj", "{82DB6623-8D46-4D85-A458-84A44A6BA644}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{EDFCB168-C058-4DF7-BA8E-3081AC0DE7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDFCB168-C058-4DF7-BA8E-3081AC0DE7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDFCB168-C058-4DF7-BA8E-3081AC0DE7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{663FE136-6B0A-40CE-B6CB-373A3F32EA26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{663FE136-6B0A-40CE-B6CB-373A3F32EA26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{663FE136-6B0A-40CE-B6CB-373A3F32EA26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{663FE136-6B0A-40CE-B6CB-373A3F32EA26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DB6623-8D46-4D85-A458-84A44A6BA644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DB6623-8D46-4D85-A458-84A44A6BA644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DB6623-8D46-4D85-A458-84A44A6BA644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DB6623-8D46-4D85-A458-84A44A6BA644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

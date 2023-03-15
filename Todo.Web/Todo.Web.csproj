@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -17,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Todo.DAL\Todo.DAL.csproj" />
+    <ProjectReference Include="..\Todo.Web.BLL\Todo.Web.BLL.csproj" />
+    <ProjectReference Include="..\Todo.Web.Contract\Todo.Web.Contract.csproj" />
   </ItemGroup>
 
 </Project>

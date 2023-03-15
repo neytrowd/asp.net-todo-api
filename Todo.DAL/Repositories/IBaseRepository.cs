@@ -17,5 +17,7 @@ namespace Todo.DAL.Repositories
 		void Delete(TEntity entity);
 
 		int SaveChanges();
+
+		Task<int> SaveChangesAsync(CancellationToken token = default);
 	}
 }

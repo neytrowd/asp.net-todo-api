@@ -19,6 +19,7 @@ namespace Todo.Web
 			
 			services.AddControllersWithViews();
 			services.AddDatabaseConfiguration(Configuration);
+			services.AddMediatrConfiguration();
 
 			services.AddSwaggerGen();
 			services.AddScoped<ITodoRepository, TodoRepository>();

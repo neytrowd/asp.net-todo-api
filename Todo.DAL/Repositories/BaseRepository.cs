@@ -42,5 +42,10 @@ namespace Todo.DAL.Repositories
 		{
 			return _context.SaveChanges();
 		}
+
+		public Task<int> SaveChangesAsync(CancellationToken token = default)
+		{
+			return _context.SaveChangesAsync(token);
+		}
 	}
 }
