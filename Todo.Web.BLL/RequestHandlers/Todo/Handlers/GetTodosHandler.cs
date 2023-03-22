@@ -25,7 +25,7 @@ namespace Todo.Web.BLL.RequestHandlers.Todo.Handlers
 
 			return new GetTodosResponse
 			{
-				Todos = (List<Models.TodoItem>)result
+				Todos = (List<Models.TodoEntity>)result
 			};
 		}
 	}

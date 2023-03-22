@@ -8,7 +8,7 @@ using Todo.Web.Models;
 
 namespace Todo.DAL.Repositories.Todo
 {
-	public interface ITodoRepository: IBaseRepository<TodoItem>
+	public interface ITodoRepository: IBaseRepository<TodoEntity>
 	{
 	
 	}

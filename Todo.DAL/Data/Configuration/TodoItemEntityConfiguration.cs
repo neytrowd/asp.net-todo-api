@@ -9,9 +9,9 @@ using Todo.Web.Models;
 
 namespace Todo.DAL.Data.Configuration
 {
-	public class TodoItemEntityConfiguration: IEntityTypeConfiguration<TodoItem>
+	public class TodoItemEntityConfiguration: IEntityTypeConfiguration<TodoEntity>
 	{
-		public void Configure(EntityTypeBuilder<TodoItem> builder) 
+		public void Configure(EntityTypeBuilder<TodoEntity> builder) 
 		{
 			builder.ToTable("Todos");
 		}

@@ -10,7 +10,7 @@ namespace Todo.DAL.Data
 {
 	public class TodoDbContext: DbContext
 	{
-		public DbSet<TodoItem> TodoItems { get; set; }
+		public DbSet<TodoEntity> TodoItems { get; set; }
 
 		public TodoDbContext(DbContextOptions<TodoDbContext> options):base(options) { }
 

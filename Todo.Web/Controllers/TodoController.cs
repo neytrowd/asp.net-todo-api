@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Todo.DAL.Repositories.Todo;
 using Todo.Web.Contract.Api.Todo.Request;
 using Todo.Web.Contract.Api.Todo.Response;
+using Todo.Web.Contract.Models;
 using Todo.Web.Models;
 
 namespace Todo.Web.Controllers
@@ -13,11 +14,9 @@ namespace Todo.Web.Controllers
 	public class TodoController : Controller
 	{
 		protected readonly IMediator _mediator;
-		protected readonly ITodoRepository _repository;
 
 		public TodoController(ITodoRepository repository, IMediator mediator)
 		{
-			_repository= repository;
 			_mediator= mediator;
 		}
 
@@ -28,11 +27,13 @@ namespace Todo.Web.Controllers
 		}
 
 		[HttpPost]
-		public async Task<CreateTodoResponse> CreateTodo(TodoItem todoItem)
+		public async Task<CreateTodoResponse> CreateTodo(CreateTodoRequest request)
 		{
+			Console.WriteLine(ModelState.IsValid);
+
 			return await _mediator.Send(new CreateTodoRequest()
 			{
-				Todo = todoItem
+				Todo = request.Todo,
 			});
 		}
 	}
