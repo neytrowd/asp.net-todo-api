@@ -29,8 +29,6 @@ namespace Todo.Web.Controllers
 		[HttpPost]
 		public async Task<CreateTodoResponse> CreateTodo(CreateTodoRequest request)
 		{
-			Console.WriteLine(ModelState.IsValid);
-
 			return await _mediator.Send(new CreateTodoRequest()
 			{
 				Todo = request.Todo,
