@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,21 @@ namespace Todo.DAL.Repositories
 		public Task<int> SaveChangesAsync(CancellationToken token = default)
 		{
 			return _context.SaveChangesAsync(token);
+		}
+
+		public virtual Task<TEntity> GetOneWhereAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includes)
+		{
+			return WithIncludes(_dbSet, includes).SingleOrDefaultAsync(predicate);
+		}
+
+		protected IQueryable<TEntity> WithIncludes(IQueryable<TEntity> query, params Expression<Func<TEntity, object>>[] includes)
+		{
+			if (includes != null)
+			{
+				query = includes.Aggregate(query, (current, include) => current.Include(include));
+			}
+
+			return query;
 		}
 	}
 }

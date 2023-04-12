@@ -1,6 +1,8 @@
-﻿namespace Todo.Web.Models
+﻿using Todo.Entities;
+
+namespace Todo.Web.Models
 {
-	public class TodoEntity
+	public class TodoEntity:IEntityBase<long>
 	{
 		public long Id { get; set; }
 

@@ -10,17 +10,16 @@ using Todo.Web.Models;
 using Newtonsoft.Json;
 using Todo.Web.Contract.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 
 namespace Todo.Web.BLL.RequestHandlers.Todo.Handlers
 {
 	public class CreateTodoHandler : BaseRequestHandler<CreateTodoRequest, CreateTodoResponse>
 	{
-		private readonly IMapper _mapper;
 		private readonly ITodoRepository _todoRepository;
 
-		public CreateTodoHandler(ITodoRepository todoRepository, IMapper mapper)
+		public CreateTodoHandler(IHttpContextAccessor httpContext, IMapper mapper, ITodoRepository todoRepository): base(httpContext, mapper)
 		{
-			_mapper = mapper;
 			_todoRepository = todoRepository;
 		}
 

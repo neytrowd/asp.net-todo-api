@@ -10,12 +10,20 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="FluentValidation" Version="11.5.1" />
     <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Todo.Common\Todo.Common.csproj" />
     <ProjectReference Include="..\Todo.DAL\Todo.DAL.csproj" />
     <ProjectReference Include="..\Todo.Web.Contract\Todo.Web.Contract.csproj" />
+    <ProjectReference Include="..\Todo.Web.Options\Todo.Web.Options.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="RequestHandlers\Auth\Validators\" />
   </ItemGroup>
 
 </Project>

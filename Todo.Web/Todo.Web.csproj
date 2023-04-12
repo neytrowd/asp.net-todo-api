@@ -21,6 +21,7 @@
     <ProjectReference Include="..\Todo.DAL\Todo.DAL.csproj" />
     <ProjectReference Include="..\Todo.Web.BLL\Todo.Web.BLL.csproj" />
     <ProjectReference Include="..\Todo.Web.Contract\Todo.Web.Contract.csproj" />
+    <ProjectReference Include="..\Todo.Web.Options\Todo.Web.Options.csproj" />
   </ItemGroup>
 
 </Project>

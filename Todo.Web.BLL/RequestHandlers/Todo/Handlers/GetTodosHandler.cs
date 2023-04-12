@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Todo.DAL.Repositories.Todo;
 using Todo.Web.Contract.Api.Todo.Request;
 using Todo.Web.Contract.Api.Todo.Response;
@@ -14,7 +16,7 @@ namespace Todo.Web.BLL.RequestHandlers.Todo.Handlers
 	{
 		private readonly ITodoRepository _todoRepository;
 
-		public GetTodosHandler(ITodoRepository todoRepository)
+		public GetTodosHandler(IHttpContextAccessor httpContext, IMapper mapper, ITodoRepository todoRepository) : base(httpContext, mapper)
 		{
 			_todoRepository = todoRepository;
 		}
