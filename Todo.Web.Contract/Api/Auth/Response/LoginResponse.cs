@@ -11,6 +11,6 @@ namespace Todo.Web.Contract.Api.Auth.Response
 	{
 		public UserModel User { get; set; }
 
-		public string AccessToken { get; set; }
+		/*public string AccessToken { get; set; }*/
 	}
 }

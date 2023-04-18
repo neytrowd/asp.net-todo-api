@@ -26,11 +26,10 @@ namespace Todo.Web
 			services.AddAuthConfiguration(Configuration.GetSection("Auth").Get<AuthOptions>());
 			services.AddMediatrConfiguration();
 			services.AddServicesConfiguration();
-			services.AddSwaggerGen();
+			services.AddSwaggerConfiguration();
 
 			services.AddScoped<ITodoRepository, TodoRepository>();
 			services.AddScoped<IUserRepository, UserRepository>();
-
 			services.AddScoped<IAuthService, AuthService>();
 		}
 
@@ -39,18 +38,8 @@ namespace Todo.Web
 			app.UseDeveloperExceptionPage();
 			app.UseRouting();
 			app.UseAuthConfiguration();
-
-			app.UseSwaggerUI(c =>
-			{
-				c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-			});
-
-			app.UseSwagger();
-
-			app.UseEndpoints(endpoints =>
-			{
-				endpoints.MapControllers();
-			});
+			app.UseSwaggerConfiguration();
+			app.UseEndpoints(endpoints => endpoints.MapControllers());
 		}
 	}
 }

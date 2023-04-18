@@ -10,5 +10,7 @@ namespace Todo.Web.BLL.Services.Auth
 	public interface IAuthService
 	{
 		public string GetAccessToken(UserEntity user);
+
+		public void AppendTokenToCookieResponse(string token);
 	}
 }

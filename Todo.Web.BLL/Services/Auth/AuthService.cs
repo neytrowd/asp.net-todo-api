@@ -4,14 +4,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Todo.DAL.Migrations;
 using Todo.Entities;
 using Todo.Web.Options;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Todo.Web.BLL.Services.Auth
 {
@@ -19,9 +18,12 @@ namespace Todo.Web.BLL.Services.Auth
 	{
 		private readonly AuthOptions _authOptions;
 
-		public AuthService(IConfiguration configuration, IOptions<AuthOptions> authOptions)
+		private readonly IHttpContextAccessor _httpContextAccessor;
+
+		public AuthService(IConfiguration configuration, IOptions<AuthOptions> authOptions, IHttpContextAccessor httpContextAccessor)
 		{
 			_authOptions = authOptions.Value;
+			_httpContextAccessor = httpContextAccessor;
 		}
 
 		public string GetAccessToken(UserEntity user)
@@ -51,15 +53,16 @@ namespace Todo.Web.BLL.Services.Auth
 			return new JwtSecurityTokenHandler().WriteToken(token);
 		}
 
-	
-		/*private void AppendTokenToCookieResponse(string token)
+
+		public void AppendTokenToCookieResponse(string token)
 		{
-			HttpContext.Response.Cookies.Append(_authOptions.CookiesName, token,
+			_httpContextAccessor.HttpContext.Response.Cookies.Append(_authOptions.CookiesName, token,
 				new CookieOptions
 				{
 					MaxAge = TimeSpan.FromDays(366),
 					Domain = _authOptions.Domain,
-				});
-		}*/
+				}
+			);
+		}
 	}
 }

@@ -33,12 +33,13 @@ namespace Todo.Web.BLL.RequestHandlers.Auth.Handlers
 
 			var access_token = _authService.GetAccessToken(user);
 
+			_authService.AppendTokenToCookieResponse(access_token);
+
 			var userModel = _mapper.Map<UserModel>(user);
 
 			return new LoginResponse()
 			{
 				User = userModel,
-				AccessToken = access_token
 			};
 		}
 	}

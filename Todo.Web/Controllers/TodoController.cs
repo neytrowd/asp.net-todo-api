@@ -13,18 +13,16 @@ using Todo.Web.Options;
 namespace Todo.Web.Controllers
 {
 	[Route("api/[controller]")]
-	[ApiController]
-	public class TodoController : Controller
+	public class TodoController : BaseController
 	{
 		private readonly IMediator _mediator;
-		private readonly IConfiguration _configuration;
 
-		public TodoController(ITodoRepository repository, IMediator mediator)
+		public TodoController(IMediator mediator)
 		{
 			_mediator= mediator;
 		}
 
-		[HttpGet, Authorize]
+		[HttpGet]
 		public async Task<GetTodosResponse> GetTodos()
 		{
 			return await _mediator.Send(new GetTodosRequest());
